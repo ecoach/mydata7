@@ -9,7 +9,7 @@ DIR_PROJ = abspath(join(SETTINGS_PATH, '../../'))
 
 sys.path.append(DIR_PROJ)
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'mydata4.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'mydata7.settings'
 
 import django.core.handlers.wsgi
 
