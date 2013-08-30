@@ -7,6 +7,7 @@ from djangotailoring.models import SubjectData
 # Create your models here.
 
 # python ../manage.py makemtsmodel > MODEL.OUT (results go below here)
+# matches version 1734 of dictionary
 
 CTEXT_CLASS_STANDING_CHOICES = (
     ('Freshman', 'Freshman'),
