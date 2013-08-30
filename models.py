@@ -26,11 +26,6 @@ INT_GOAL_GRADE_CHOICES = (
     ('1', 'C- or below'),
 )
 
-TEXT_YES_NO_CHOICES = (
-    ('yes', 'yes'),
-    ('no', 'no'),
-)
-
 INT_HS_MATH_CHOICES = (
     ('1', 'Algebra'),
     ('2', 'Geometry'),
@@ -99,9 +94,9 @@ CTEXT_COLLEGE_CHOICES = (
 )
 
 INT_PAST_PHYSICS_EXPERIENCE_CHOICES = (
-    ('1', 'Positive'),
+    ('2', 'Positive'),
     ('0', 'Neutral'),
-    ('-1', 'Negative'),
+    ('-2', 'Negative'),
 )
 
 CTEXT_GENDER_CHOICES = (
@@ -110,9 +105,9 @@ CTEXT_GENDER_CHOICES = (
 )
 
 INT_ATTITUDE_MATH_CHOICES = (
-    ('-1', 'I am not a math person.'),
-    ('0', "I wish there was a math review at the beginning.  I probably learned the math needed at some point, but I've forgotten a lot of it."),
-    ('1', 'I am confident in my math abilities.'),
+    ('2', 'yes'),
+    ('0', 'maybe, but I wish there was a math review'),
+    ('-2', 'no'),
 )
 
 INT_GOAL_GRADE_RESET_CHOICES = (
@@ -170,8 +165,8 @@ TEXT_HS_ACTIVITY_CHOICES = (
 INT_PAST_PHYSICS_CHOICES = (
     ('6', "I've taken physics at U of M"),
     ('5', "I've taken physics at a community college"),
-    ('4', 'AP Physics B'),
-    ('3', 'AP Physics C'),
+    ('4', 'AP Physics C'),
+    ('3', 'AP Physics B'),
     ('2', 'Honors High School Physics'),
     ('1', 'High School Physics'),
     ('0', 'I have never taken a physics class'),
@@ -181,6 +176,11 @@ INT_ACT_MATH_CHOICES = (
     ('0', 'I did not take the ACT'),
     ('-99', 'I do not remember my ACT math score'),
     ('15', '15 or below'),
+)
+
+INT_YES_NO_CHOICES = (
+    ('1', 'yes'),
+    ('0', 'no'),
 )
 
 TEXT_LEARNER_CHOICES = (
@@ -257,10 +257,8 @@ CTEXT_YES_NO_CHOICES = (
 )
 
 INT_ATTITUDE_EXAMS_CHOICES = (
-    ('2', 'I prefer them to free response.'),
-    ('1', "They're fine.  I feel like they accurately assess my ability to solve physics problems."),
-    ('-1', "I don't feel like I get a fair chance to demonstrate my ability without having partial credit."),
-    ('-2', 'They really stress me out.'),
+    ('1', 'yes'),
+    ('0', 'no'),
 )
 
 CTEXT_INVOLVED_IN_CHOICES = (
@@ -281,9 +279,10 @@ TEXT_SLC_INTEREST_CHOICES = (
 )
 
 INT_ATTITUDE_PHYSICS_EXP_CHOICES = (
-    ('-1', "I'm not a physics person."),
-    ('0', "I wouldn't necessarily call myself a physics person, but I know I have the ability to learn the skills necessary to solve physics problems."),
-    ('1', 'I am a physics person.'),
+    ('-4', 'I am not at all confident in my ability to learn physics.'),
+    ('-2', 'I am not confident in my ability to learn physics.'),
+    ('2', 'I am confident in my ability to learn physics.'),
+    ('4', 'I am very confident in my ability to learn physics.'),
 )
 
 INT_COURSE_CHOICES = (
@@ -329,10 +328,11 @@ CTEXT_PARENT_ED_CHOICES = (
 )
 
 INT_ATTITUDE_PHYSICS_NOEXP_CHOICES = (
-    ('-1', "I don't think I'm a physics person."),
-    ('0', "I wouldn't necessarily think of myself a physics person, but I know I have the ability to learn the skills necessary to solve physics problems."),
-    ('1', "I think I'm a physics person."),
-    ('-2', "Given that I haven't had any experience, I really don't know."),
+    ('-4', 'I am not at all confident in my ability to learn physics.'),
+    ('-2', 'I am not confident in my ability to learn physics.'),
+    ('0', 'Since I have had no prior physics experience, I honestly do not know what to expect.'),
+    ('2', 'I am confident in my ability to learn physics.'),
+    ('4', 'I am very confident in my ability to learn physics.'),
 )
 
 
@@ -345,10 +345,11 @@ class Source1(SubjectData):
     Movie = models.CharField(max_length=8, choices=TEXT_MOVIE_CHOICES, null=True, blank=True)
     Movie_Other = models.CharField(max_length=50, null=True, blank=True)
     Course = models.IntegerField(null=True, blank=True)
-    Another_Hard_Class = models.CharField(max_length=3, choices=TEXT_YES_NO_CHOICES, null=True, blank=True)
+    Another_Hard_Class = models.CharField(max_length=1, choices=INT_YES_NO_CHOICES, null=True, blank=True)
     Learner = models.CharField(max_length=8, choices=TEXT_LEARNER_CHOICES, null=True, blank=True)
     MP_Name = models.CharField(max_length=20, null=True, blank=True)
     Attitude_Exams = models.IntegerField(null=True, blank=True)
+    Attitude_Anxiety = models.IntegerField(null=True, blank=True)
     Attitude_Physics_Noexp = models.IntegerField(null=True, blank=True)
     Attitude_Physics_Exp = models.IntegerField(null=True, blank=True)
     Attitude_Math = models.IntegerField(null=True, blank=True)
