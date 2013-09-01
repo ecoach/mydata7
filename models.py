@@ -137,6 +137,7 @@ CTEXT_COLLEGE_CONCENTRATE_CHOICES = (
     ('Health', 'Health-related Field (Physical Therapy, Pharmacology, Nursing, etc.)'),
     ('Humanities', 'Humanities'),
     ('Math', 'Mathematics'),
+    ('Stats', 'Statistics'),
     ('Neurosci', 'Neuroscience'),
     ('Social_Science_not_Psych', 'Social Science (excluding Psychology)'),
     ('Psych_BBCS', 'Psychology or BBCS'),
@@ -438,6 +439,7 @@ class Common1(SubjectData):
     Concentrate__Health = models.NullBooleanField()
     Concentrate__Humanities = models.NullBooleanField()
     Concentrate__Math = models.NullBooleanField()
+    Concentrate__Stats = models.NullBooleanField()
     Concentrate__Neurosci = models.NullBooleanField()
     Concentrate__Social_Science_not_Psych = models.NullBooleanField()
     Concentrate__Psych_BBCS = models.NullBooleanField()
