@@ -3,7 +3,7 @@ host = socket.gethostname()
 
 if host == "ecoach2.lsa.umich.edu":
     HOST = "DEVELOPMENT"
-elif host == "ecoach.lsa.umich.edu":
+elif host == "ecoach3.lsa.umich.edu":
     HOST = "PRODUCTION"
 else:
     HOST = "LOCAL"
