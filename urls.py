@@ -22,7 +22,7 @@ mts_patterns = patterns('',
     #url(r'^curator/',       include('mycurator.urls', namespace='mycurator')),
     url(r'^usage/',         include('myusage.urls', namespace='myusage')),
     url(r'^logger/',        include('mylogger.urls', namespace='mylogger')),
-    url(r'^tournament/',    include('mytournament.urls', namespace='tourney')),
+    url(r'^tournament/',    include('mytournament13.urls', namespace='tourney')),
 
     # message project
     url(r'^',               include('mytailoring.urls', namespace='mytailoring')),
